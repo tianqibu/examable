@@ -13,7 +13,7 @@ function App() {
       const data = await res.json()
       console.log(data)
       return data
-  }https://github.com/tianqibu/examable/blob/main/frontend/app/src/App.js
+  }
   
   fetchAllCards()
   }, [])

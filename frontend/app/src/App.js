@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import Header from './components/Header'
+import { useEffect } from 'react'
 import './App.css';
 
 function App() {
+   
+  useEffect(() => {
+     // Fetch currency options
+     const fetchAllCards = async () => {
+      const res = await fetch(`http://localhost:8000/api/studycards`, {
+          method: 'GET',
+      })
+      const data = await res.json()
+      console.log(data)
+      return data
+  }
+  
+  fetchAllCards()
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+     <Header />
     </div>
   );
 }

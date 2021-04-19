@@ -21,19 +21,9 @@ const StudyCardsSchema = new Schema({
     type: Number,
     required: true,
   },
-  latestAttemptCorrect: {
-    type: Boolean,
-    required: true,
-  },
   dueRetrvTime: {
     type: Number,
     required: true,
-  },
-  first: {
-    type: Boolean,
-  },
-  nextSpacedRetrievalURI: {
-    type: String,
   },
 });
 

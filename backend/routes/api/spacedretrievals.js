@@ -5,20 +5,8 @@ const spacedRetrievalsController = require("../../controllers/api/spacedretrieva
 // Get ALL Spacedretrievals
 router.get("/", spacedRetrievalsController.getAllSpacedRetrievals);
 
-// Get ONE Spacedretrieval
-router.get("/:id", spacedRetrievalsController.getSingleSpacedRetrieval);
-
-// // Get ONE Spacedretrieval question
-router.get(
-  "/:id/question",
-  spacedRetrievalsController.getSingleSpacedRetrievalQuestion
-);
-
-// Get ONE Spacedretrieval answer
-router.get(
-  "/:id/answer",
-  spacedRetrievalsController.getSingleSpacedRetrievalAnswer
-);
+// Get Next Spacedretrieval
+router.get("/nextCard", spacedRetrievalsController.getNextSpacedRetrieval);
 
 // Update ONE Spacedretrieval
 router.put("/:id", spacedRetrievalsController.updateSpacedRetrieval);

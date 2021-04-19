@@ -23,9 +23,8 @@ exports.getSingleStudyCard = async (req, res) => {
 
 exports.createStudyCard = async (req, res) => {
   const { question, answer } = req.body;
-  const { correctAttempts, latestAttemptCorrect, dueRetrvTime } = {
+  const { correctAttempts, dueRetrvTime } = {
     correctAttempts: 0,
-    latestAttemptCorrect: false,
     dueRetrvTime: Date.now(),
   };
 
@@ -34,7 +33,6 @@ exports.createStudyCard = async (req, res) => {
       question,
       answer,
       correctAttempts,
-      latestAttemptCorrect,
       dueRetrvTime,
     });
 

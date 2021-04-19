@@ -6,84 +6,19 @@ exports.getAllSpacedRetrievals = async (req, res) => {
     const spacedRetrievals = await StudyCards.find({
       dueRetrvTime: { $lt: Date.now() },
     });
-
-    const updatedSpacedRetrievals = await Promise.all(
-      spacedRetrievals.map(async (spacedRetrieval, index, array) => {
-        let spacedRetrievalObj;
-        const first = index === 0 ? true : false;
-
-        const nextSpacedRetrievalURI =
-          index < array.length - 1
-            ? `/api/spacedretrievals/${array[index + 1]._id}`
-            : false;
-
-        try {
-          spacedRetrievalObj = await StudyCards.findByIdAndUpdate(
-            { _id: spacedRetrieval._id },
-            { $set: { first, nextSpacedRetrievalURI } },
-            { upsert: false, new: true }
-          );
-
-          return spacedRetrievalObj;
-        } catch (e) {
-          console.log(e);
-        }
-      })
-    );
-    res.status(200).json(updatedSpacedRetrievals);
+    res.status(200).json(spacedRetrievals);
   } catch (e) {
     res.status(500).send(e);
   }
 };
 
-exports.getSingleSpacedRetrieval = async (req, res) => {
-  const spacedRetrievalId = mongoose.Types.ObjectId(req.params.id);
-
+exports.getNextSpacedRetrieval = async (req, res) => {
   try {
-    const spacedRetrieval = await StudyCards.findById({
-      _id: spacedRetrievalId,
+    const spacedRetrieval = await StudyCards.findOne({
+      dueRetrvTime: { $lt: Date.now() },
     });
 
     res.status(200).json(spacedRetrieval);
-  } catch (e) {
-    res.status(500).send(e);
-  }
-};
-
-exports.getSingleSpacedRetrievalQuestion = async (req, res) => {
-  const spacedRetrievalId = mongoose.Types.ObjectId(req.params.id);
-
-  try {
-    const spacedRetrieval = await StudyCards.findById({
-      _id: spacedRetrievalId,
-    });
-
-    const spacedRetrievalQuestion = {
-      _id: spacedRetrieval._id,
-      question: spacedRetrieval.question,
-    };
-    res.status(200).json(spacedRetrievalQuestion);
-  } catch (e) {
-    res.status(500).send(e);
-  }
-};
-
-exports.getSingleSpacedRetrievalAnswer = async (req, res) => {
-  const spacedRetrievalId = mongoose.Types.ObjectId(req.params.id);
-
-  try {
-    const spacedRetrieval = await StudyCards.findById({
-      _id: spacedRetrievalId,
-    });
-
-    const spacedRetrievalAnswer = {
-      _id: spacedRetrieval._id,
-      question: spacedRetrieval.question,
-      answer: spacedRetrieval.answer,
-      nextSpacedRetrievalURI: spacedRetrieval.nextSpacedRetrievalURI,
-    };
-
-    res.status(200).json(spacedRetrievalAnswer);
   } catch (e) {
     res.status(500).send(e);
   }
@@ -102,23 +37,21 @@ exports.updateSpacedRetrieval = async (req, res) => {
     const spacedRetrieval = await StudyCards.findById({
       _id: spacedRetrievalId,
     });
-    const { question, answer } = spacedRetrieval;
     let { correctAttempts, dueRetrvTime } = spacedRetrieval;
 
-    if (latestAttemptCorrect) {
-      correctAttempts++;
+    {
+      latestAttemptCorrect && correctAttempts++;
     }
 
-    if (correctAttempts < timeArray.length) {
-      dueRetrvTime = Date.now() + timeArray[correctAttempts];
-    } else {
-      dueRetrvTime = Date.now() + timeArray[length - 1];
-    }
+    dueRetrvTime =
+      correctAttempts < timeArray.length
+        ? Date.now() + timeArray[correctAttempts]
+        : Date.now() + timeArray[length - 1];
 
     const updatedSpacedRetrieval = await StudyCards.findByIdAndUpdate(
       { _id: spacedRetrievalId },
-      { question, answer, correctAttempts, latestAttemptCorrect, dueRetrvTime },
-      { new: true, overwrite: true }
+      { $set: { correctAttempts, dueRetrvTime } },
+      { new: true }
     );
 
     res.status(200).json(updatedSpacedRetrieval);

@@ -1,5 +1,9 @@
 import Header from './components/Header'
+import GettingStartedList from './components/GettingStartedList'
 import Footer from './components/Footer'
+import Launch from './components/Launch'
+import Article from './components/Article'
+import ExampleCards from './components/ExampleCards'
 import { useEffect } from 'react'
 
 function App() {
@@ -22,7 +26,12 @@ function App() {
   return (
     <div className="container">
      <Header />
+     <Article />
+     <GettingStartedList />
+     <Launch />
+     <ExampleCards />
      <Footer />
+     
     </div>
   );
 }

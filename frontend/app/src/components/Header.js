@@ -7,9 +7,9 @@ const Header = () => {
         <nav className="navBar">
             <img className='logo left' src={logo} alt="Examable Logo"></img>
             <div>
-                <Button text= "Home" className="right" /> 
-                <Button text= "Deck" className="right" /> 
-                <Button text= "Study Now" className="right" />
+                <Button className='navButton' text= "Home" className="right" /> 
+                <Button className='navButton' text= "Deck" className="right" /> 
+                <Button className='navButton' text= "Study Now" className="right" />
             </div>
         </nav>
     )

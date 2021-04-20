@@ -1,13 +1,13 @@
 import Header from './components/Header'
+import './App.scss';
 import { useEffect } from 'react'
-import './App.css';
 
 function App() {
    
   useEffect(() => {
      // Fetch all cards
      const fetchAllCards = async () => {
-      const res = await fetch(`http://localhost:8000/api/studycards`, {
+      const res = await fetch('http://localhost:8000/api/studycards', {
           method: 'GET',
       })
       const data = await res.json()

@@ -38,10 +38,22 @@ function App() {
       </>
       } />
       <Route path = '/deck' exact >
-        <> <p>The deck page</p> </>
+        <> <p>
+            The Deck route - maybe logic here for frames 2a and 2b 
+              depending on how it wants doing.
+           </p>
+        </>
+      </Route>
+      <Route path = '/deck/add-card' exact>
+        <>Route for adding new card</>
+      </Route>
+      <Route path = '/deck/update-card' exact>
+        <>Route for updating a card</>
       </Route>
       <Route path='/study-now' exact>
-        <>The study now page</>
+        <>
+          <p>The study now page, maybe some logic for when different components are displayed.</p>
+        </>
       </Route>
      <Footer />
     </div>

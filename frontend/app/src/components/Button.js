@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
 
 const Button = ({ backgroundColor, text }) => {
-    return <button style={{ backgroundColor: backgroundColor }} className='btn'>{ text }</button>
+    return <button style={{ backgroundColor: backgroundColor }} 
+    className='btn'>{ text }</button>
 }
 
-// Defaults for button
-Button.defaultProps = {
-    backgroundColor: '#FFF'
-}
+// // Defaults for button
+// Button.defaultProps = {
+//     backgroundColor: '#FFF'
+// }
 
 // Prop validation
 Button.propTypes = {

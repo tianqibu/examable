@@ -2,10 +2,12 @@
 import logo from '../images/logo.svg'
 import Button from './Button'
 
+import { Link } from 'react-router-dom'
+
 const Header = () => {
     return (
         <nav className="navBar">
-            <img className='logo left' src={logo} alt="Examable Logo"></img>
+            <Link to='/'><img className='logo left' src={logo} alt="Examable Logo"></img></Link>
             <div>
                 <Button 
                     buttonStyle="btn--white" 

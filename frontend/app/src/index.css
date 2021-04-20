@@ -50,10 +50,7 @@
 
 footer {
   width: 100%;
-  position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
   background-color: #5b9bd5ff;
   color: white;
   text-align: center;
@@ -63,7 +60,7 @@ footer {
 .footer-text {
   padding: 60px 0;
   text-align: center;
-}
+} */
 
 .mainArticle {
   display: flex;
@@ -133,9 +130,9 @@ h1 {
 
 
 .example-section {
-  padding-bottom: 400px;
   padding-left: 3%;
   padding-right: 3%;
+  padding-bottom: 100px;
 }
 
 .exampleCard {

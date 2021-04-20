@@ -7,9 +7,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .GSL-Container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   max-height: 350px;
   padding-left: 15%;
@@ -50,10 +51,7 @@
 
 footer {
   width: 100%;
-  position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
   background-color: #5b9bd5ff;
   color: white;
   text-align: center;
@@ -63,12 +61,12 @@ footer {
 .footer-text {
   padding: 60px 0;
   text-align: center;
-}
+} */
 
 .mainArticle {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
 }
 
@@ -99,7 +97,8 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   height: 400px;
-  padding: 50px;
+  padding: 100px;
+  padding-bottom: 150px;
 }
 
 .child {
@@ -133,9 +132,9 @@ h1 {
 
 
 .example-section {
-  padding-bottom: 400px;
   padding-left: 3%;
   padding-right: 3%;
+  padding-bottom: 100px;
 }
 
 .exampleCard {

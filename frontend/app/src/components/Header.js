@@ -1,15 +1,18 @@
+  
 import logo from '../images/logo.svg'
-import Button from 'react-bootstrap/Button';
-import Navbar from 'react-bootstrap/Navbar'
+import Button from './Button'
 
 const Header = () => {
     return (
-        <Navbar>
+        <nav class="navBar">
             <img className='logo left' src={logo} alt="Logo"></img>
-            <Button variant="testing123">Home</Button> 
-            <Button variant="white">Deck</Button> 
-            <Button variant="white">Study Now</Button>
-        </Navbar>
+            
+            <div>
+            <Button text= "Home" className="right" /> 
+            <Button text= "Deck" className="right" /> 
+            <Button text= "Study Now" className="right" />
+            </div>
+        </nav>
     )
 }
 

@@ -10,7 +10,25 @@
 
 .logo {
   width: 300px;
+  padding-left: 24px;
 }
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+button {
+  display: inline-block;
+  color: #435058ff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+} 
 
 footer {
   width: 100%;

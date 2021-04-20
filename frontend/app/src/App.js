@@ -1,6 +1,5 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
-import './App.scss';
 import { useEffect } from 'react'
 
 function App() {

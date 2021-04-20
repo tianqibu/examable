@@ -1,0 +1,70 @@
+:root {
+    --yellow: #ffcd38ff;
+    --charcoal: #435058ff;
+    --blue:  #5b9bd5ff;
+    --red:  #FF0000ff;
+    --green: #70AD47ff;
+    --white: #FFFFFF;
+}
+
+.btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn--blue {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+}
+
+.btn-blue:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+
+.btn--white {
+    background-color: var(--white);
+    color: var(--charcoal);
+    border: none;
+    outline: none;
+}
+
+.btn--white:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    outline: none;
+}
+
+
+.btn--charcoal {
+    background-color: var(--charcoal);
+    color: var(--white);
+    border: none;
+    outline: none;
+}
+
+.btn--charcoal:hover {
+    background-color: var(--white);
+    color: var(--charcoal);
+    border: 2px solid var(--charcoal);
+}
+
+.btn--medium {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.btn--small {
+    padding: 15px 20px;
+    font-size: 18px;
+}

@@ -31,7 +31,6 @@ function App() {
      <Launch />
      <ExampleCards />
      <Footer />
-     
     </div>
   );
 }

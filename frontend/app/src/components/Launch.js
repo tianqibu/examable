@@ -12,8 +12,8 @@ const Launch = () => {
                 <div className="textContainer">
                     <img className="launchLogo" src={logo} alt=''></img>
                     <h1 className="launchHeading">has launched</h1>
-                    <p>examable is now up and running. Create some flashcards and become more than able for your exams today!</p>
-                    <Button className="launchButton" text="Get started now"/>
+                    <p className="launchParagraph">examable is now up and running. Create some flashcards and become more than able for your exams today!</p>
+                    <Button buttonStyle="btn--charcoal" text="Get started now"/>
                 </div>
             </div>    
         </div>

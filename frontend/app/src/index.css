@@ -48,26 +48,6 @@
   padding-right: 15px;
 }
 
-.navButton {
-  display: inline-block;
-  color: #435058ff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  outline: none;
-  background-color: #FFF;
-} 
-
-.navButton:hover {
-  background: #5b9bd5ff;
-  color: white;
-}
-
 footer {
   width: 100%;
   position: fixed;
@@ -108,12 +88,6 @@ footer {
   max-width: 500px;
 }
 
-.blueButton {
-  background: #5b9bd5ff;
-  color: white;
-  padding-left: 0;
-}
-
 h1 {
   font-size: 60px;
 }
@@ -133,7 +107,7 @@ h1 {
 }
 
 .launchLogo {
-  width: 300px;
+  width: 100%;
   margin-bottom: -40px;
 }
 
@@ -142,12 +116,12 @@ h1 {
   padding-bottom: 20px;
 }
 
-.placeholder {
-  width: 400px;
+.launchParagraph {
+  padding-bottom: 40px;
 }
 
-.launchButton {
-  color: red;
+.placeholder {
+  width: 400px;
 }
 
 .textContainer {

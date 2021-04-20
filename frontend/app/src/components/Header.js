@@ -7,9 +7,21 @@ const Header = () => {
         <nav className="navBar">
             <img className='logo left' src={logo} alt="Examable Logo"></img>
             <div>
-                <Button className='navButton' text= "Home" className="right" /> 
-                <Button className='navButton' text= "Deck" className="right" /> 
-                <Button className='navButton' text= "Study Now" className="right" />
+                <Button 
+                    buttonStyle="btn--white" 
+                    text= "Home" 
+                    className="right" 
+                /> 
+                <Button 
+                    buttonStyle="btn--white" 
+                    text= "Deck" 
+                    className="right" 
+                /> 
+                <Button 
+                    buttonStyle="btn--white" 
+                    text= "Study Now" 
+                    className="right" 
+                /> 
             </div>
         </nav>
     )

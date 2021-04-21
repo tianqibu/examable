@@ -5,7 +5,7 @@ import Launch from './components/Launch'
 import Article from './components/Article'
 import ExampleCards from './components/ExampleCards'
 import StudyExamable from './components/StudyExamable'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
          method: 'GET',
      })
      const data = await res.json()
-     console.log(data)
      return data
   }
   fetchAllCards()

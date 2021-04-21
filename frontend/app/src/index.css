@@ -100,14 +100,15 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-height: 350px;
+  max-height: 400px;
   margin: 4rem;
 }
 
 .GSL-Item {
-  padding: 40px 10px;
+  padding: 40px 5px;
   align-items: center;
-  max-width: 300px;
+  min-width: 300px;
+  max-width: 400px;
   /* color: #435058ff; */
 }
 .GSL-Item-Image {
@@ -132,35 +133,51 @@ h1 {
 /* Launch */
 
 .launchContainer {
-  padding: 20px;
+  /* padding: 20px;
   display: flex;
   justify-content: space-evenly;
   height: 400px;
   padding: 50px 100px;
   padding-bottom: 150px;
-  padding-left: 24%;
+  padding-left: 24%; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-height: 400px;
+  margin: 4rem;
 }
 
 .child {
-  margin: 20px;
-  padding-right: 100px;
+  /* margin: 20px;
+  padding-right: 100px; */
+  padding: 40px 5px;
+  align-items: center;
+  min-width: 300px;
+  max-width: 400px;
 }
 
 .launchLogo {
+  /* width: 300px;
+  margin-bottom: -40px;
+  padding-top: 20px; */
+  height: auto;
   width: 300px;
   margin-bottom: -40px;
-  padding-top: 20px;
+  display: block;
 }
 
 .launchHeading {
   font-size: 45px;
   padding-bottom: 20px;
+  padding-top:20px;
+  margin: auto;
+  text-align: center;
 }
 
 .launchParagraph {
-  padding-bottom: 40px;
-  width: 60%;
-  text-align: left;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 .placeholder {

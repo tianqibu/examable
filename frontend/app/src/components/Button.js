@@ -7,7 +7,8 @@ const STYLES = [
     "btn--white",
     "btn--yellow",
     "btn--red",
-    "btn--green"
+    "btn--green",
+    "btn--icon"
 ]
 
 const SIZES = [
@@ -18,7 +19,8 @@ const SIZES = [
 const Button = ({ 
     buttonStyle,
     buttonSize,
-    text
+    text,
+    event
     }) => {
 
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[1]
@@ -26,6 +28,7 @@ const Button = ({
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
     return <button 
+        onClick={event}
         className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
     >{ text }</button>
 }

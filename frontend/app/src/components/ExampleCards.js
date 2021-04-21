@@ -3,7 +3,7 @@ import ExampleCard from './ExampleCard'
 const ExampleCards = () => {
     return (
         <div className="example-section">
-            <h3>Examable Examples</h3>
+            <h2>Examable Examples</h2>
             <div  className="example-cards">
             <ExampleCard question="What does the fox say?"
                 answer="Incoherent Screaming"/>

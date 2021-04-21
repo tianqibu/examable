@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const ExampleCard = ({ question, answer}) => {
+const ExampleCard = ({ question, answer }) => {
     return (
         <div className="exampleCard">
             <div className="questionHalf">

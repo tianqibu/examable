@@ -142,8 +142,8 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 30%;
-  height: 200px;
-  font-size: 2rem;
+  max-height: 150px;
+  font-size: 1.8rem;
 }
 
 .questionHalf {
@@ -184,6 +184,12 @@ h1 {
 
 .example-cards {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
   padding-top: 2%;
+}
+
+.example-section > h2 {
+  font-size: 45px;
 }

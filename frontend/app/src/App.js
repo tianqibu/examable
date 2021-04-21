@@ -27,36 +27,39 @@ function App() {
 
   return (
     <Router>
-    <div className="container">
-     <Header />
-     <Route path='/' exact render={() => 
-      <>
-        <Article />
-        <GettingStartedList />
-        <Launch />
-        <ExampleCards />
-      </>
-      } />
-      <Route path = '/deck' exact >
-        <> <p>
-            The Deck route - maybe logic here for frames 2a and 2b 
-              depending on how it wants doing.
-           </p>
-        </>
-      </Route>
-      <Route path = '/deck/add-card' exact>
-        <>Route for adding new card</>
-      </Route>
-      <Route path = '/deck/update-card' exact>
-        <>Route for updating a card</>
-      </Route>
-      <Route path='/study-now' exact>
-        <>
-          <p>The study now page, maybe some logic for when different components are displayed.</p>
-        </>
-      </Route>
-     <Footer />
-    </div>
+      
+        <Header />
+        <div className="pageBody">
+        <Route path='/' exact render={() => 
+          <>
+              <Article />
+              <GettingStartedList />
+              <Launch />
+              <ExampleCards />
+          </>
+          } />
+          <Route path = '/deck' exact >
+            <> <p>
+                The Deck route - maybe logic here for frames 2a and 2b 
+                  depending on how it wants doing.
+              </p>
+            </>
+          </Route>
+          <Route path = '/deck/add-card' exact>
+            <>Route for adding new card</>
+          </Route>
+          <Route path = '/deck/update-card' exact>
+            <>Route for updating a card</>
+          </Route>
+          <Route path='/study-now' exact>
+            <>
+              <p>The study now page, maybe some logic for when different components are displayed.</p>
+            </>
+          </Route>
+          
+          </div>
+        <Footer />
+     
     </Router>
   );
 }

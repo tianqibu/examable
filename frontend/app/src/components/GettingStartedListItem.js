@@ -4,11 +4,11 @@ const GettingStartedListItem = (props) => {
     return (
             <div className="GSL-Item">
                 <img className="GSL-Item-Image" 
-                alt="placeholder" 
+                alt="Image of the current item" 
                 src={ props.src }>
                 </img>
                 <h3 className="GSL-Heading">{ props.heading }</h3>
-                <p className="GSL-Text">{props.description}</p>
+                <p className="GSL-Text">{ props.description }</p>
             </div>
     )
 }

@@ -10,14 +10,15 @@
 .btn {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer; 
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
+    padding: 4px;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-     box-shadow: 0 5px 15px #435058ff;
+    transform: translateY(-2px);
+     box-shadow: 0 4px 10px #435058ff;
 }
 
 .btn--blue {

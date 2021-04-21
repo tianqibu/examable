@@ -16,7 +16,6 @@ const SIZES = [
 ]
 
 const Button = ({ 
-    onClick,
     buttonStyle,
     buttonSize,
     text
@@ -28,7 +27,6 @@ const Button = ({
 
     return <button 
         className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
-        onClick={onClick} 
     >{ text }</button>
 }
 

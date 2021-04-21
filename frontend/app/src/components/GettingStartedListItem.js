@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 const GettingStartedListItem = (props) => {
     return (
             <div className="GSL-Item">
-                <img className="GSL-Item-Image" 
-                alt="Image of the current item" 
-                src={ props.src }>
-                </img>
+                <div>
+                    <img className="GSL-Item-Image" 
+                    alt="The current item" 
+                    src={ props.src }>
+                    </img>
+                </div>
                 <h3 className="GSL-Heading">{ props.heading }</h3>
                 <p className="GSL-Text">{ props.description }</p>
             </div>

@@ -1,0 +1,37 @@
+:root {
+    --yellow: #ffcd38ff;
+    --charcoal: #435058ff;
+    --blue:  #5b9bd5ff;
+    --red:  #FF0000ff;
+    --green: #70AD47ff;
+    --white: #FFFFFF;
+}
+
+.SE-Container {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.SE-Container > div {
+    margin: auto;
+    padding: 3rem 0;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.SE-Question-Container {
+    background-color: var(--yellow);
+    border-radius: 20px;
+}
+
+.SE-Question-Container > p {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.revealButton {
+    margin: auto;
+}
+

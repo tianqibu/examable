@@ -4,26 +4,27 @@ import Footer from './components/Footer'
 import Launch from './components/Launch'
 import Article from './components/Article'
 import ExampleCards from './components/ExampleCards'
-
-import { useEffect } from 'react'
+import StudyExamable from './components/StudyExamable'
+import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
-   
-  useEffect(() => {
-     // Fetch all cards
-     const fetchAllCards = async () => {
-      const res = await fetch('http://localhost:8000/api/studycards', {
-          method: 'GET',
-      })
-      const data = await res.json()
-      console.log(data)
-      return data
-  }
   
+
+  useEffect(() => {
+    // Fetch all cards
+    const fetchAllCards = async () => {
+     const res = await fetch('http://localhost:8000/api/studycards', {
+         method: 'GET',
+     })
+     const data = await res.json()
+     console.log(data)
+     return data
+  }
   fetchAllCards()
   }, [])
 
+  
 
   return (
     <Router>
@@ -51,9 +52,12 @@ function App() {
           <Route path = '/deck/update-card' exact>
             <>Route for updating a card</>
           </Route>
-          <Route path='/study-now' exact>
+          <Route 
+          path='/study-now'
+          exact
+          >
             <>
-              <p>The study now page, maybe some logic for when different components are displayed.</p>
+              <StudyExamable />
             </>
           </Route>
           

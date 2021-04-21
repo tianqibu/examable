@@ -9,8 +9,6 @@ import { useEffect } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
-  
-
   useEffect(() => {
     // Fetch all cards
     const fetchAllCards = async () => {

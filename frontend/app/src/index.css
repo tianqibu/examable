@@ -133,17 +133,9 @@ h1 {
 /* Launch */
 
 .launchContainer {
-  /* padding: 20px;
-  display: flex;
-  justify-content: space-evenly;
-  height: 400px;
-  padding: 50px 100px;
-  padding-bottom: 150px;
-  padding-left: 24%; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-height: 400px;
   margin: 4rem;
 }
 
@@ -154,16 +146,14 @@ h1 {
   align-items: center;
   min-width: 300px;
   max-width: 400px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .launchLogo {
-  /* width: 300px;
-  margin-bottom: -40px;
-  padding-top: 20px; */
+  margin: -40px 0;
   height: auto;
-  width: 300px;
-  margin-bottom: -40px;
-  display: block;
+  max-width: 300px;
 }
 
 .launchHeading {
@@ -171,13 +161,12 @@ h1 {
   padding-bottom: 20px;
   padding-top:20px;
   margin: auto;
-  text-align: center;
 }
 
 .launchParagraph {
   width: 100%;
-  text-align: center;
-  margin: auto;
+  text-align: left;
+  margin: 0 auto 1rem;
 }
 
 .placeholder {
@@ -189,6 +178,10 @@ h1 {
   float: right;
   margin: 40px;
   padding: 20px;
+}
+
+.subtitle {
+  font-size: 45px;
 }
 
 /* Example cards */
@@ -224,7 +217,7 @@ h1 {
   align-items: center;
   color: black;
   padding: 2%;
-  
+  font-weight: bold;
 }
 
 .answerHalf {
@@ -241,6 +234,8 @@ h1 {
 .answerHalf > p {
   color: white;
   text-align: center;
+  padding: 2%;
+  font-weight: bold;
 }
 
 .example-cards {

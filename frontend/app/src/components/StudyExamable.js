@@ -73,7 +73,10 @@ const StudyExamable = () => {
     }, [])
         
     return (
-        <>{Examable ? 
+        <>
+        {!Examable ? 
+            <p className="SE-No-Examable-Text">You've finished studying all of your Examables for now! Check back later.</p>
+            :
             <div className="SE-Container">
                 <div className="SE-Question-Container SE-Card-Large">
                     {ConfettiExists ? 
@@ -99,7 +102,6 @@ const StudyExamable = () => {
                                 </Icon>
                                 <Icon
                                 icon="tick"
-                                buttonStyle="btn--icon"
                                 event={CorrectAnswer}>
                                 </Icon>
                             </div>
@@ -116,9 +118,7 @@ const StudyExamable = () => {
                         </div>
                     }
                 </div>
-            </div> 
-            : 
-            "You've finished studying all of your Examables for now! Check back later."
+            </div>  
             }
         </>
     )

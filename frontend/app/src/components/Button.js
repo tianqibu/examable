@@ -15,19 +15,26 @@ const SIZES = [
     "btn--small"
 ]
 
+const POSITIONS = [
+    "btn--center"
+]
+
 const Button = ({ 
     buttonStyle,
     buttonSize,
-    text
+    buttonPosition,
+    text,
+    onClick
     }) => {
 
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[1]
 
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
-    return <button 
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
-    >{ text }</button>
+    return <div><button onClick={onClick}
+            className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
+        >{ text }</button></div>
+    
 }
 
 // Prop validation

@@ -20,6 +20,7 @@ const Button = ({
     buttonStyle,
     buttonSize,
     text,
+    image,
     event
     }) => {
 

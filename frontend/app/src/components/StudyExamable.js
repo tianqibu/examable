@@ -1,22 +1,27 @@
 import PropTypes from 'prop-types'
 import './button.css'
-import Button from './Button'
 import './StudyExamable.css'
 import { useEffect, useState } from 'react'
-
+import useWindowSize from "@rooks/use-window-size"
+import Button from './Button'
+import Icon from './Icon'
+import Confetti from 'confetti-react';
  
 const StudyExamable = () => {
     const [Examable, setExamable] = useState([])
     const [Revealed, setRevealed] = useState(false)
+    const [ConfettiExists, setConfettiExists] = useState(false)
+    const { width, height } = useWindowSize();
+    const recycle = false;
     const RevealAnswer = () => {
         setRevealed(!Revealed)
     }
     const WrongAnswer = () => {
         setRevealed(!Revealed)
         toggleLatestAttemptFalse()
-        getExamable()
     }
     const CorrectAnswer = () => {
+        setConfettiExists(!ConfettiExists)
         setRevealed(!Revealed)
         toggleLatestAttemptTrue()
     }
@@ -68,36 +73,54 @@ const StudyExamable = () => {
     }, [])
         
     return (
-        
-        <div className="SE-Container">
-            <div className="SE-Question-Container SE-Card-Large">
-                <p>{ Examable.question }</p>
-            </div>
-
-            <div className="SE-StateDependent">
-                {Revealed ? 
-                    <>
-                        <div className="SE-Answer-Container SE-Card-Small">
-                            <p>{ Examable.answer }</p>
-                        </div>
-                        <div className="SE-Button-Container SE-Card-Small">
-                            <Button event={WrongAnswer}></Button><Button event={CorrectAnswer}></Button>
-                        </div>
-                    </>
-                    :
-                    <div className="SE-Card-Small">
-                        <Button 
-                            className="SE-Button"
-                            buttonStyle="btn--charcoal" 
-                            text="Reveal Answer"
-                            event={RevealAnswer}
-                        
-                        />
+        <>{Examable ? 
+            <div className="SE-Container">
+                <div className="SE-Question-Container SE-Card-Large">
+                    {ConfettiExists ? 
+                    <div>
+                    <Confetti width={width} height={height} recycle={recycle}/>
+                    <p>{ Examable.question }</p>
                     </div>
+                    : 
+                    <p>{ Examable.question }</p>
                 }
-            </div>
-        </div>
-        
+                </div>
+
+                <div className="SE-StateDependent">
+                    {Revealed ? 
+                        <>
+                            <div className="SE-Answer-Container SE-Card-Small">
+                                <p>{ Examable.answer }</p>
+                            </div>
+                            <div className="SE-Button-Container SE-Card-Small">
+                                <Icon
+                                icon="cross"
+                                event={WrongAnswer}>
+                                </Icon>
+                                <Icon
+                                icon="tick"
+                                buttonStyle="btn--icon"
+                                event={CorrectAnswer}>
+                                </Icon>
+                            </div>
+                        </>
+                        :
+                        <div className="SE-Card-Small">
+                            <Button 
+                                className="SE-Button"
+                                buttonStyle="btn--charcoal" 
+                                text="Reveal Answer"
+                                event={RevealAnswer}
+                            
+                            />
+                        </div>
+                    }
+                </div>
+            </div> 
+            : 
+            "You've finished studying all of your Examables for now! Check back later."
+            }
+        </>
     )
 }
 

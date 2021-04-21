@@ -137,6 +137,7 @@ function App() {
                 onQuestionChange={value => setNewQuestion(value)}
                 onAnswerChange={value => setNewAnswer(value)}
                 />
+                <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
             </>
             }/>
           <Route path = '/deck/update-card' exact render={() =>
@@ -150,6 +151,7 @@ function App() {
                 onAnswerChange={value => setUpdateAnswer(value)}
                 onSubmit={updateCard}
               />
+              <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
             </>
             }/>
           <Route path='/study-now' exact>

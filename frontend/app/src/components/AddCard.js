@@ -16,7 +16,7 @@ const AddCard = ({
                 <label> Question
                     <input 
                         className="cardFront add" 
-                        type="text" 
+                        type="text" required
                         onChange={(e) => onQuestionChange(e.target.value)}
                         name="question" 
                         defaultValue={question}/>
@@ -26,7 +26,7 @@ const AddCard = ({
                 <label> Answers
                     <input 
                         className="cardBack add" 
-                        type="text" 
+                        type="text" required
                         onChange={(e) => onAnswerChange(e.target.value)}
                         name="answer" 
                         defaultValue={answer}/>

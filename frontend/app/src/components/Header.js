@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <nav className="navBar">
             <Link to='/'><img className='logo left' src={logo} alt="Examable Logo"></img></Link>
-            <div>
+            <div className="buttonsContainer">
                 <Link to='/'>
                     <Button 
                         buttonStyle="btn--white" 
@@ -27,7 +27,8 @@ const Header = () => {
                     <Button 
                         buttonStyle="btn--white" 
                         text= "Study Now" 
-                        className="right" 
+                        className="right"
+                        
                     /> 
                 </Link>  
             </div>

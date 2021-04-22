@@ -7,7 +7,8 @@ const STYLES = [
     "btn--white",
     "btn--yellow",
     "btn--red",
-    "btn--green"
+    "btn--green",
+    "btn--icon"
 ]
 
 const SIZES = [
@@ -24,17 +25,17 @@ const Button = ({
     buttonSize,
     buttonPosition,
     text,
-    onClick
+    event
     }) => {
 
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[1]
 
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
-    return <div><button onClick={onClick}
-            className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
-        >{ text }</button></div>
-    
+    return <button 
+        onClick={event}
+        className={`btn ${checkButtonStyle} ${checkButtonSize}`} 
+    >{ text }</button>
 }
 
 // Prop validation

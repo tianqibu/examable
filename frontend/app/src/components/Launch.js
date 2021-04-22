@@ -11,8 +11,8 @@ const Launch = () => {
             </div>
             <div className="child">
                 <div className="textContainer">
-                    <h1 className="launchHeading"><img className="launchLogo" src={logo} alt=''></img>has launched</h1>
-                    <p className="launchParagraph">examable is now up and running. Create some flashcards and become more than able for your exams today!</p>
+                    <div className="launchHeading"><img className="launchLogo" src={logo} alt=''></img><h1 className="subtitle">has launched</h1></div>
+                    <p className="launchParagraph">Examable is now up and running. Create some flashcards and become more than able for your exams today!</p>
                     <Link to='/deck'><Button buttonStyle="btn--charcoal" text="Get started now"/></Link>
                 </div>
             </div>    

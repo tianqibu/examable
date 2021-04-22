@@ -1,0 +1,25 @@
+:root {
+    --yellow: #ffcd38ff;
+    --charcoal: #435058ff;
+    --blue:  #5b9bd5ff;
+    --red:  #FF0000ff;
+    --green: #70AD47ff;
+    --white: #FFFFFF;
+}
+
+.icon {
+    cursor: pointer; 
+    transition: transform 0.2s ease;
+    background-color: var(--white);
+    border: 0;
+}
+
+.icon:hover {
+    transform: translateY(-2px);
+}
+
+.icon_image {
+    margin: 0 4rem;
+    width: 10vh;
+    height: 10vh;
+}

@@ -1,0 +1,69 @@
+:root {
+    --yellow: #ffcd38ff;
+    --charcoal: #435058ff;
+    --blue:  #5b9bd5ff;
+    --red:  #FF0000ff;
+    --green: #70AD47ff;
+    --white: #FFFFFF;
+}
+
+.SE-Container {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.SE-Card-Large {
+    margin: 2rem auto;
+    padding: 3rem 0;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.SE-Card-Small {
+    margin: 2rem auto;
+    padding: 3rem 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.SE-Question-Container {
+    background-color: var(--yellow);
+    border-radius: 20px;
+}
+
+.SE-Question-Container p {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.SE-Answer-Container {
+    background-color: var(--blue);
+    border-radius: 20px;
+}
+
+.SE-Answer-Container > p {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.SE-Button {
+    margin: auto;
+}
+
+.SE-StateDependent {
+    margin: 0 0 3rem;
+}
+
+.SE-Button-Container {
+    display: flex;
+    justify-content: flex;
+}
+.SE-No-Examable-Text {
+    text-align: center;
+    vertical-align: bottom;
+}

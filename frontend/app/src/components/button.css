@@ -18,13 +18,13 @@
 
 .btn:hover {
     transform: translateY(-2px);
-     box-shadow: 0 4px 10px #435058ff;
+    box-shadow: 0 4px 10px #435058ff;
 }
 
 .btn--blue {
     background-color: var(--blue);
     color: var(--white);
-    border: none;
+    border: 2px solid var(--blue);
 }
 
 .btn-blue:hover {
@@ -51,7 +51,7 @@
 .btn--charcoal {
     background-color: var(--charcoal);
     color: var(--white);
-    border: none;
+    border: 2px solid var(--charcoal);
     outline: none;
 }
 

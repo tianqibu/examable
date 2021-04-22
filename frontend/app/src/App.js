@@ -5,11 +5,15 @@ import Launch from './components/Launch'
 import Article from './components/Article'
 import Title from './components/Title'
 import ExampleCards from './components/ExampleCards'
+
 import DeckCardList from './components/DeckCardList'
 import Button from './components/Button'
 import AddCard from './components/AddCard'
 
 import { useEffect, useState } from 'react'
+
+import StudyExamable from './components/StudyExamable'
+
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
@@ -78,8 +82,7 @@ function App() {
       ? setAllCards([...allCards, data.newStudyCard])
       : alert('Error adding card')
   }
-
-
+  
   // Update card in API
   const updateCard = async (e) => {
     e.preventDefault();
@@ -126,6 +129,7 @@ function App() {
                 />
               <Link to="/deck/add-card"><Button buttonPosition="btn--center" text="Add new examinable" /></Link>
             </>
+
             }/>
           <Route path = '/deck/add-card' exact render={() =>
             <> 
@@ -156,7 +160,7 @@ function App() {
             }/>
           <Route path='/study-now' exact>
             <>
-              <p>The study now page, maybe some logic for when different components are displayed.</p>
+              <StudyExamable />
             </>
           </Route>
           

@@ -7,6 +7,7 @@
   --red:  #FF0000ff;
   --green: #70AD47ff;
   --white: #FFFFFF;
+  --footerHeight: 200px;
 }
 
 * {
@@ -15,6 +16,7 @@
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: large;
 }
 
 /* navBar */
@@ -22,31 +24,45 @@
 .logo {
   width: 300px;
   padding-left: 6rem;
+  padding-top: 5px;
 }
 
 .navBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 15px;
+  margin-right: 15px;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
 }
 
 /* Footer */
 html, body {
-  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.pageBody {
+  padding-bottom: var(--footerHeight);
 }
 
 footer {
+  position: absolute;
   width: 100%;
   bottom: 0;
   background-color: var(--blue);
   color: white;
   text-align: center;
-  height: 200px;
+  height: var(--footerHeight);
 }
 
 .footer-text {
-  padding: 60px 0;
+  padding: 90px 0;
   text-align: center;
 } 
 
@@ -83,66 +99,75 @@ h1 {
 
 .GSL-Container {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  max-height: 350px;
-  padding-left: 15%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-height: 400px;
+  margin: 4rem;
 }
 
 .GSL-Item {
-  padding: 100px;
-  display: inline-block;
+  padding: 40px 5px;
   align-items: center;
+  min-width: 300px;
+  max-width: 400px;
   /* color: #435058ff; */
 }
 .GSL-Item-Image {
   height: auto;
   width: 100px;
-  padding-left: 16%;
+  margin: auto;
+  display: block;
  }
 
 .GSL-Heading {
   padding-top:20px;
   padding-bottom:20px;
-  padding-left: 15%;
+  margin: auto;
+  text-align: center;
 }
 .GSL-Text {
-  width: 55%;
+  width: 50%;
   text-align: center;
+  margin: auto;
 }
 
 /* Launch */
 
 .launchContainer {
-  padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  height: 400px;
-  padding: 100px;
-  padding-bottom: 150px;
-  padding-left: 24%;
+  margin: 4rem;
 }
 
 .child {
-  margin: 20px;
-  padding-right: 100px;
+  /* margin: 20px;
+  padding-right: 100px; */
+  padding: 40px 5px;
+  align-items: center;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .launchLogo {
-  width: 300px;
-  margin-bottom: -40px;
-  padding-top: 20px;
+  margin: -40px 0;
+  height: auto;
+  max-width: 300px;
 }
 
 .launchHeading {
   font-size: 45px;
   padding-bottom: 20px;
+  padding-top:20px;
+  margin: auto;
 }
 
 .launchParagraph {
-  padding-bottom: 40px;
-  width: 60%;
+  width: 100%;
   text-align: left;
+  margin: 0 auto 1rem;
 }
 
 .placeholder {
@@ -158,6 +183,10 @@ h1 {
 
 /* Example Cards */
 
+.subtitle {
+  font-size: 45px;
+}
+
 .example-section {
   padding-left: 3%;
   padding-right: 3%;
@@ -170,7 +199,6 @@ h1 {
   flex-direction: column;
   width: 30%;
   height: 150px;
-  font-size: 25px;
 }
 
 .questionHalf {
@@ -190,7 +218,7 @@ h1 {
   align-items: center;
   color: black;
   padding: 2%;
-  
+  font-weight: bold;
 }
 
 .answerHalf {
@@ -207,6 +235,8 @@ h1 {
 .answerHalf > p {
   color: white;
   text-align: center;
+  padding: 2%;
+  font-weight: bold;
 }
 
 .example-cards {

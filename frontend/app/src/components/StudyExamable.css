@@ -28,6 +28,10 @@
     justify-content: center;
 }
 
+.Shadow {
+    box-shadow: 5px 5px 5px grey;
+}
+
 .SE-Question-Container {
     background-color: var(--yellow);
     border-radius: 20px;

@@ -56,7 +56,7 @@ footer {
   width: 100%;
   bottom: 0;
   background-color: var(--blue);
-  color: white;
+  color: black;
   text-align: center;
   height: var(--footerHeight);
 }
@@ -217,10 +217,10 @@ h1 {
   word-wrap: break-word;
 }
 
-.questionHalf > p {
+.questionHalf > h3 {
   text-align: center;
   align-items: center;
-  color: var(--charcoal);
+  color: black;
   padding: 2%;
   font-weight: bold;
 }
@@ -236,8 +236,8 @@ h1 {
   height: 50%;
 }
 
-.answerHalf > p {
-  color: white;
+.answerHalf > h3 {
+  color: black;
   text-align: center;
   padding: 2%;
   font-weight: bold;
@@ -251,7 +251,7 @@ h1 {
   padding-top: 2%;
 }
 
-.example-section > h2 {
+.example-section > h2, .GSL-Section > h2 {
   font-size: 45px;
   margin: 0 1rem;
 }
@@ -274,6 +274,7 @@ h1 {
   justify-content: center;
   word-wrap: break-word;
   height: 200px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .cardFront {
@@ -302,7 +303,9 @@ h1 {
   flex-direction: row;
   justify-content: space-around;
   padding-top: 2%;
-  padding-bottom: 2%
+  padding-bottom: 2%;
+  /* padding-right: 10%;
+  padding-left: 10%; */
 }
 
 .cardList {
@@ -325,8 +328,7 @@ h1 {
 
 .add-container {
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
 }
 
 .cards-container {
@@ -391,9 +393,10 @@ label {
 
 .alert {
   left: 0;
-  position: fixed;
-  top: 0;
+  position: relative;
+  margin-bottom: 10px;
   width: 100%;
+  z-index: 1500;
 }
 
 .btn--center {

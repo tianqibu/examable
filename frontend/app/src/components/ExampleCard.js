@@ -4,10 +4,10 @@ const ExampleCard = ({ question, answer }) => {
     return (
         <div className="exampleCard">
             <div className="questionHalf">
-                <p>{ question }</p>
+                <h3>{ question }</h3>
             </div>
             <div className="answerHalf">
-                <p>{ answer }</p>
+                <h3>{ answer }</h3>
             </div>
             
         </div>

@@ -37,7 +37,7 @@ const AddCard = ({
                     </div>
                 </div>
                 <div className="btn--center">
-                    <Button input type="submit" value="Submit" text="Submit" />
+                    <Button buttonSize="btn--large" input type="submit" value="Submit" text="Submit" />
                 </div>
             </form>
         </div> 

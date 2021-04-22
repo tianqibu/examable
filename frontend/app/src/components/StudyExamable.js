@@ -70,7 +70,7 @@ const StudyExamable = () => {
             <p className="SE-No-Examable-Text SE-Question-Container SE-Card-Large">You've finished studying all of your Examables for now! Check back later.</p>
             :
             <div className="SE-Container">
-                <div className="SE-Question-Container SE-Card-Large">
+                <div className="SE-Question-Container SE-Card-Large Shadow">
                     {ConfettiExists ? 
                     <div>
                     <Confetti width={width} height={height} recycle={recycle}/>
@@ -84,7 +84,7 @@ const StudyExamable = () => {
                 <div className="SE-StateDependent">
                     {Revealed ? 
                         <>
-                            <div className="SE-Answer-Container SE-Card-Small">
+                            <div className="SE-Answer-Container SE-Card-Small Shadow">
                                 <p>{ Examable.answer }</p>
                             </div>
                             <div className="SE-Button-Container SE-Card-Small">

@@ -274,6 +274,7 @@ h1 {
   justify-content: center;
   word-wrap: break-word;
   height: 200px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .cardFront {
@@ -302,7 +303,9 @@ h1 {
   flex-direction: row;
   justify-content: space-around;
   padding-top: 2%;
-  padding-bottom: 2%
+  padding-bottom: 2%;
+  /* padding-right: 10%;
+  padding-left: 10%; */
 }
 
 .cardList {
@@ -325,8 +328,7 @@ h1 {
 
 .add-container {
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
 }
 
 .cards-container {
@@ -391,9 +393,10 @@ label {
 
 .alert {
   left: 0;
-  position: fixed;
-  top: 0;
+  position: relative;
+  margin-bottom: 10px;
   width: 100%;
+  z-index: 1500;
 }
 
 .btn--center {

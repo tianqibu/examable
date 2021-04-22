@@ -75,12 +75,12 @@ function App() {
       // Deletes card from UI
       setAllCards(allCards.filter((c) => c._id !== card.id))
       setFlash({
-        message: 'Success! The card has been deleted.',
+        message: 'Success! The examable has been deleted.',
         severity:'success'
       })
     } else {
       setFlash({
-        message: 'Error! The card has not been deleted. Please try again.',
+        message: 'Error! The examable has not been deleted. Please try again.',
         severity: 'error'
       })
     }
@@ -105,12 +105,12 @@ function App() {
     if (res.status === 201) {
       setAllCards([...allCards, data.newStudyCard]) // Adds card to UI 
       setFlash({
-        message: 'Success! The card has been added.',
+        message: 'Success! The examable has been added.',
         severity:'success'
       })
     } else {
       setFlash({
-        message: 'Error! The card has not been added. Please try again.',
+        message: 'Error! The examable has not been added. Please try again.',
         severity:'error'
       })
     }
@@ -139,20 +139,20 @@ function App() {
       setAllCards(allCards.map((card) => card._id === data._id ? data : card ))
       // Success message
       setFlash({
-        message: 'Success! The card has been updated.',
+        message: 'Success! The examable has been updated.',
         severity:'success'
       })
     } else {
       // Error message
       setFlash({
-        message: 'Error! The card has not been updated. Please try again.',
+        message: 'Error! The examable has not been updated. Please try again.',
         severity:'error'
       })
     }}
 
   return (
     <Router>
-        { 
+      { 
           showFlash
           ? (
               <Fade in={showFlash} timeout={{ enter: 300, exit: 1000 }}>
@@ -176,14 +176,15 @@ function App() {
               <Title title="My Examables" />
               <div className="btn--center">
                 <Link to="/deck/add-card">
-                  <Button text="Add new examinable" />
+                  <Button 
+                      buttonSize="btn--large" 
+                      text="Add new examable" />
                 </Link>
               </div>
               <DeckCardList 
                 allCards={allCards} 
                 onDelete={deleteCard} 
                 onUpdate={cardToBeUpdated}
-                // fetchAllCards={fetchAllCards}
                 />
             </>
 
@@ -198,7 +199,7 @@ function App() {
                 placeholder="Type here..."
                 />
                 <div className="btn--center">
-                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
+                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue" buttonSize="btn--large"/></Link>
                 </div>
                 <div className="spacer"></div>
             </>
@@ -215,7 +216,7 @@ function App() {
                 onSubmit={updateCard}
               />
               <div className="btn--center">
-                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
+                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue" buttonSize="btn--large"/></Link>
               </div>
               <div className="spacer"></div>
             </>

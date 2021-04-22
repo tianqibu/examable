@@ -13,17 +13,13 @@ const STYLES = [
 
 const SIZES = [
     "btn--medium",
-    "btn--small"
-]
-
-const POSITIONS = [
-    "btn--center"
+    "btn--small",
+    "btn--large"
 ]
 
 const Button = ({ 
     buttonStyle,
     buttonSize,
-    buttonPosition,
     text,
     event
     }) => {

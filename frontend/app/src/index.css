@@ -56,7 +56,7 @@ footer {
   width: 100%;
   bottom: 0;
   background-color: var(--blue);
-  color: white;
+  color: black;
   text-align: center;
   height: var(--footerHeight);
 }
@@ -217,10 +217,10 @@ h1 {
   word-wrap: break-word;
 }
 
-.questionHalf > p {
+.questionHalf > h3 {
   text-align: center;
   align-items: center;
-  color: var(--charcoal);
+  color: black;
   padding: 2%;
   font-weight: bold;
 }
@@ -236,8 +236,8 @@ h1 {
   height: 50%;
 }
 
-.answerHalf > p {
-  color: white;
+.answerHalf > h3 {
+  color: black;
   text-align: center;
   padding: 2%;
   font-weight: bold;
@@ -251,7 +251,7 @@ h1 {
   padding-top: 2%;
 }
 
-.example-section > h2 {
+.example-section > h2, .GSL-Section > h2 {
   font-size: 45px;
   margin: 0 1rem;
 }

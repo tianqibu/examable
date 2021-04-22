@@ -7,11 +7,11 @@ const Launch = () => {
     return (
         <div className="launchContainer">
             <div className="child">
-            <img className="placeholder" src={Placeholder} alt=''></img>
+            <img className="placeholder" src={Placeholder} alt='A note with question "want to learn faster" written on it'></img>
             </div>
             <div className="child">
                 <div className="textContainer">
-                    <div className="launchHeading"><img className="launchLogo" src={logo} alt=''></img><h1 className="subtitle">has launched</h1></div>
+                    <div className="launchHeading"><img className="launchLogo" src={logo} alt='Examable Logo'></img><h2 className="subtitle">has launched</h2></div>
                     <p className="launchParagraph">Examable is now up and running. Create some flashcards and become more than able for your exams today!</p>
                     <Link to='/deck'><Button buttonStyle="btn--charcoal" text="Get started now"/></Link>
                 </div>

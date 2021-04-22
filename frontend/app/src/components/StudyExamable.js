@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import './button.css'
 import './StudyExamable.css'
 import { useEffect, useState } from 'react'
@@ -6,6 +5,7 @@ import useWindowSize from "@rooks/use-window-size"
 import Button from './Button'
 import Icon from './Icon'
 import Confetti from 'confetti-react';
+import { fetchNextCard } from './Utils'
  
 const StudyExamable = () => {
     const [Examable, setExamable] = useState([])
@@ -25,12 +25,6 @@ const StudyExamable = () => {
         setRevealed(!Revealed)
         toggleLatestAttemptTrue()
     }
-    // Fetch next card
-    const fetchNextCard = async () => {
-        const res = await fetch('http://localhost:8000/api/spacedRetrievals/nextCard')
-        const data = await res.json()
-        return data
-    }
     // Fetch card after first answer
     const getExamable = async () => {
         const nextCard = await fetchNextCard()
@@ -39,7 +33,6 @@ const StudyExamable = () => {
     // Toggle cards latestAttemptCorrect value to true and gets next card for UI
     const toggleLatestAttemptTrue = async () => {
         const toggleTrue = { ...Examable, latestAttemptCorrect: true }
-        // console.log(examable, toggleTrue)
         await fetch(`http://localhost:8000/api/spacedRetrievals/${Examable._id}`, {
             method: 'PUT',
             headers: {
@@ -53,7 +46,6 @@ const StudyExamable = () => {
     // Toggle cards latestAttemptCorrect value to false and gets next card for UI
     const toggleLatestAttemptFalse = async () => {
         const toggleFalse = { ...Examable, latestAttemptCorrect: false }
-        // console.log(examable, toggleTrue)
         await fetch(`http://localhost:8000/api/spacedRetrievals/${Examable._id}`, {
             method: 'PUT',
             headers: {
@@ -124,10 +116,4 @@ const StudyExamable = () => {
     )
 }
 
-StudyExamable.defaultProps = {
-    question: 'This is a question',
-}
-StudyExamable.propTypes = { 
-    question: PropTypes.string
-}
 export default StudyExamable

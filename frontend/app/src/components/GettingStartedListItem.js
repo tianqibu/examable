@@ -5,7 +5,7 @@ const GettingStartedListItem = (props) => {
             <div className="GSL-Item">
                 <div>
                     <img className="GSL-Item-Image" 
-                    alt="The current item" 
+                    alt={ props.alt } 
                     src={ props.src }>
                     </img>
                 </div>

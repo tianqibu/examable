@@ -1,4 +1,4 @@
-
+import { scrollToTop } from './Utils'
 import Icon from './Icon'
 
 import { Link } from 'react-router-dom'
@@ -18,7 +18,11 @@ const DeckCardListItem = ({ id, question, answer, onDelete, onUpdate }) => {
                 <Link to='/deck/update-card'>
                     <Icon className="deckIcon"
                         icon="edit"
-                        event={() => onUpdate({id, question, answer })}>
+                        event={
+                            () => {
+                                onUpdate({id, question, answer })
+                                scrollToTop();
+                        }}>
                     </Icon>
                 </Link>
                     <Icon className="deckIcon"

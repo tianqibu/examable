@@ -7,6 +7,7 @@ const DeckCardListItem = ({ id, question, answer, onDelete, onUpdate }) => {
 
     return (
         <div className="cardListItem">
+            <div className="iconBallast"></div>
             <div className="cardFront">
                 <p>{ question }</p>
             </div>
@@ -14,7 +15,7 @@ const DeckCardListItem = ({ id, question, answer, onDelete, onUpdate }) => {
                 <p>{ answer }</p>
             </div>
             <div className="cardListButtons">
-                <Link  to='/deck/update-card'>
+                <Link to='/deck/update-card'>
                     <Icon className="deckIcon"
                         icon="edit"
                         event={() => onUpdate({id, question, answer })}>

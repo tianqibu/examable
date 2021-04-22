@@ -5,7 +5,7 @@ const AddCard = ({
     onQuestionChange, 
     onAnswerChange, 
     question, 
-    answer 
+    answer
 }) => {
 
     return (

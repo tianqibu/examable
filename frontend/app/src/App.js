@@ -5,15 +5,15 @@ import Launch from './components/Launch'
 import Article from './components/Article'
 import Title from './components/Title'
 import ExampleCards from './components/ExampleCards'
-
 import DeckCardList from './components/DeckCardList'
 import Button from './components/Button'
 import AddCard from './components/AddCard'
-
-import { useEffect, useState } from 'react'
-
 import StudyExamable from './components/StudyExamable'
 
+import Alert from '@material-ui/lab/Alert';
+import Fade from '@material-ui/core/Fade';
+
+import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
@@ -25,6 +25,11 @@ function App() {
   const [updateID, setUpdateID] = useState('')
   const [updateQuestion, setUpdateQuestion] = useState('')
   const [updateAnswer, setUpdateAnswer] = useState('')
+  const [showFlash, setShowFlash] = useState(null);
+  const [flash, setFlash] = useState({
+        severity: '',
+        message: '',                                  
+  })
  
   useEffect(() => {
 
@@ -41,9 +46,16 @@ function App() {
     fetchAllCards()
   }, [])
 
+  // Flash Message 
+  const displayFlashMessage = () => {
+    setShowFlash(true)
+    setTimeout(() => {
+      setShowFlash(false);
+    }, 5000);
+  }
+
   // Card to be updated
   const cardToBeUpdated = async (details) => {
-    console.log(details.id, details.answer, details.question)
     setUpdateID(details.id)
     setUpdateQuestion(details.question)
     setUpdateAnswer(details.answer)
@@ -57,11 +69,21 @@ function App() {
       method: 'DELETE',
     })
 
-    res.status === 204
+    displayFlashMessage();
+
+    if (res.status === 204) {
       // Deletes card from UI
-      ? setAllCards(allCards.filter((c) => c._id !== card.id))
-      // Error alert
-      : alert('Error deleting card')
+      setAllCards(allCards.filter((c) => c._id !== card.id))
+      setFlash({
+        message: 'Success! The card has been deleted.',
+        severity:'success'
+      })
+    } else {
+      setFlash({
+        message: 'Error! The card has not been deleted. Please try again.',
+        severity: 'error'
+      })
+    }
   }
 
   // Add card to API
@@ -78,11 +100,22 @@ function App() {
 
     const data = await res.json()
 
-    res.status === 201
-      ? setAllCards([...allCards, data.newStudyCard])
-      : alert('Error adding card')
+    displayFlashMessage()
+
+    if (res.status === 201) {
+      setAllCards([...allCards, data.newStudyCard]) // Adds card to UI 
+      setFlash({
+        message: 'Success! The card has been added.',
+        severity:'success'
+      })
+    } else {
+      setFlash({
+        message: 'Error! The card has not been added. Please try again.',
+        severity:'error'
+      })
+    }
   }
-  
+
   // Update card in API
   const updateCard = async (e) => {
     e.preventDefault();
@@ -99,15 +132,35 @@ function App() {
 
     const data = await res.json()
 
-    res.status === 200
+    displayFlashMessage()
+
+    if (res.status === 200) {
       // Updates card in UI
-      ? setAllCards(allCards.map((card) => card._id === data._id ? data : card ))
-      // Error alert
-      : alert('Error updating card')
-  }
+      setAllCards(allCards.map((card) => card._id === data._id ? data : card ))
+      // Success message
+      setFlash({
+        message: 'Success! The card has been updated.',
+        severity:'success'
+      })
+    } else {
+      // Error message
+      setFlash({
+        message: 'Error! The card has not been updated. Please try again.',
+        severity:'error'
+      })
+    }}
 
   return (
     <Router>
+        { 
+          showFlash
+          ? (
+              <Fade in={showFlash} timeout={{ enter: 300, exit: 1000 }}>
+                <Alert classname="alert" severity={flash.severity}>{flash.message}</Alert>
+              </Fade>
+            )
+          : null 
+        }
         <Header />
         <div className="pageBody">
         <Route path='/' exact render={() => 

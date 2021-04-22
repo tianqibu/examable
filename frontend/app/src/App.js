@@ -213,6 +213,7 @@ function App() {
             }/>
           <Route path='/study-now' exact>
             <>
+              <Title title="Study Examables" />
               <StudyExamable />
             </>
           </Route>

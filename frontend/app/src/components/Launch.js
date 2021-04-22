@@ -1,6 +1,7 @@
 import logo from '../images/logo.svg'
 import Button from './Button'
 import Placeholder from '../images/NoteImage_Square.svg'
+import Image from '../images/launch.jpeg'
 import { Link } from 'react-router-dom'
 import { scrollToTop } from './Utils'
 
@@ -8,7 +9,7 @@ const Launch = () => {
     return (
         <div className="launchContainer">
             <div className="child">
-            <img className="placeholder" src={Placeholder} alt='A note with question "want to learn faster" written on it'></img>
+            <img className="placeholder" src={Image} alt='A note with question "want to learn faster" written on it'></img>
             </div>
             <div className="child">
                 <div className="textContainer">

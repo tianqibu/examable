@@ -9,7 +9,6 @@ const DeckCardList = ({ allCards, onDelete, onUpdate }) => {
                 <DeckCardListItem key={card._id} id={card._id} onUpdate={onUpdate} onDelete={onDelete} question={card.question} answer={card.answer}/>
                 ))) 
                 : ('No cards to show') }
-
         </div>
     
     )

@@ -24,9 +24,7 @@ const DeckCardListItem = ({ id, question, answer, onDelete, onUpdate }) => {
                     <Icon className="deckIcon"
                         icon="delete"
                         event={()=>onDelete({id})}>
-                    </Icon>
-                
-                                
+                    </Icon>          
             </div>
         </div>
     )

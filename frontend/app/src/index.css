@@ -151,8 +151,6 @@ h1 {
 }
 
 .child {
-  /* margin: 20px;
-  padding-right: 100px; */
   padding: 20px 5px;
   align-items: center;
   min-width: 300px;
@@ -182,7 +180,7 @@ h1 {
 
 .placeholder {
   max-width: 100%;
-  height: auto;
+  margin-top: 10%;
 }
 
 .textContainer {

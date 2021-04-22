@@ -48,7 +48,6 @@
     outline: none;
 }
 
-
 .btn--charcoal {
     background-color: var(--charcoal);
     color: var(--white);
@@ -70,9 +69,4 @@
 .btn--small {
     padding: 15px 20px;
     font-size: 18px;
-}
-
-.btn--center {
-    align-items: center;
-    margin: auto;
 }

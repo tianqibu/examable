@@ -5,35 +5,40 @@ const AddCard = ({
     onQuestionChange, 
     onAnswerChange, 
     question, 
-    answer
+    answer,
+    placeholder
 }) => {
 
     return (
         <div className="add-container">
             <form onSubmit={onSubmit}>
                 <div className="cards-container">
-                <div className="question-container">
-                <label> Question
-                    <input 
-                        className="cardFront add" 
-                        type="text" required
-                        onChange={(e) => onQuestionChange(e.target.value)}
-                        name="question" 
-                        defaultValue={question}/>
-                </label>
+                    <div className="question-container">
+                        <label> Question
+                            <input 
+                                className="cardFront add" 
+                                type="text" required
+                                onChange={(e) => onQuestionChange(e.target.value)}
+                                name="question" 
+                                placeholder={placeholder}
+                                defaultValue={question}/>
+                        </label>
+                    </div>
+                    <div className="answer-container">
+                    <label> Answer
+                        <input 
+                            className="cardBack add" 
+                            type="text" required
+                            onChange={(e) => onAnswerChange(e.target.value)}
+                            name="answer" 
+                            placeholder={placeholder}
+                            defaultValue={answer}/>
+                        </label><br></br>
+                    </div>
                 </div>
-                <div className="answer-container">
-                <label> Answers
-                    <input 
-                        className="cardBack add" 
-                        type="text" required
-                        onChange={(e) => onAnswerChange(e.target.value)}
-                        name="answer" 
-                        defaultValue={answer}/>
-                </label><br></br>
+                <div className="btn--center">
+                    <Button input type="submit" value="Submit" text="Submit" />
                 </div>
-                </div>
-                <Button input type="submit" value="Submit" text="Submit" />
             </form>
         </div> 
     )

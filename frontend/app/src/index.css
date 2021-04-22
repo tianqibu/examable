@@ -11,8 +11,8 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -217,11 +217,10 @@ h1 {
   word-wrap: break-word;
 }
 
-
 .questionHalf > p {
   text-align: center;
   align-items: center;
-  color: black;
+  color: var(--charcoal);
   padding: 2%;
   font-weight: bold;
 }
@@ -285,13 +284,17 @@ h1 {
   background-color: var(--blue);
 }
 
-.cardBack > p, .cardFront > p {
+.cardBack *, .cardFront * {
   text-align: center;
   font-size: 5vh;
 }
 
-.cardBack > p {
+.cardBack * {
   color: white;
+}
+
+.cardFront * {
+  color: var(--charcoal);
 }
 
 .cardListItem {
@@ -330,6 +333,8 @@ h1 {
   padding-bottom: 40px;
   height: 300px;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .add {
@@ -338,36 +343,63 @@ h1 {
   outline: none;
 }
 
-input, label {
+/* input, label {
   display: block;
   margin: 20px;
+} */
+
+label {
+  font-size: 4vh;
+  color: var(--charcoal)
 }
 
 .question-container {
   float: left;
   margin: 20px;
+  width: 40vw;
 }
 
 .answer-container {
   float: left;
   margin: 20px;
+  width: 40vw;
 }
 
-.add-container input[type=text] {
-  font-size: 20px;
+.question-container input[type=text] {
+  margin-top: 15px;
+  font-size: 5vh;
   color: var(--charcoal);
-  width: 300px;
+  width: 40vw;
+  text-align: center;
 }
 
-.add-container ::placeholder {
+.answer-container input[type=text] {
+  margin-top: 15px;
+  font-size: 5vh;
+  color: var(--white);
+  width: 40vw;
+  text-align: center;
+}
+
+.question-container ::placeholder {
+  color: var(--charcoal);
+}
+
+.answer-container ::placeholder {
   color: white;
 }
 
 .alert {
   left: 0;
-  pointerEvents: none;
   position: fixed;
   top: 0;
   width: 100%;
-  zIndex: 1500;
+}
+
+.btn--center {
+  text-align: center;
+}
+
+.spacer {
+  height: 1rem;
 }

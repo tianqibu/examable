@@ -10,18 +10,23 @@ import { fetchNextCard } from './Utils'
 const StudyExamable = () => {
     const [Examable, setExamable] = useState([])
     const [Revealed, setRevealed] = useState(false)
-    const [ConfettiExists, setConfettiExists] = useState(false)
     const { width, height } = useWindowSize();
-    const recycle = false;
+    const [recycle, setRecycle] = useState(false)
+    const [run, setRun] = useState(false);
     const RevealAnswer = () => {
         setRevealed(!Revealed)
+        setRecycle(false)
     }
     const WrongAnswer = () => {
         setRevealed(!Revealed)
         toggleLatestAttemptFalse()
     }
     const CorrectAnswer = () => {
-        setConfettiExists(!ConfettiExists)
+        setRun(true)
+        setRecycle(true)
+        setTimeout(() => {
+            setRecycle(false)
+        }, 3000);
         setRevealed(!Revealed)
         toggleLatestAttemptTrue()
     }
@@ -71,14 +76,8 @@ const StudyExamable = () => {
             :
             <div className="SE-Container">
                 <div className="SE-Question-Container SE-Card-Large">
-                    {ConfettiExists ? 
-                    <div>
-                    <Confetti width={width} height={height} recycle={recycle}/>
+                    <Confetti width={width} height={height} recycle={recycle} run={run}/>
                     <p>{ Examable.question }</p>
-                    </div>
-                    : 
-                    <p>{ Examable.question }</p>
-                }
                 </div>
 
                 <div className="SE-StateDependent">

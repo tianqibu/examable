@@ -279,8 +279,9 @@ h1 {
   background-color: var(--blue);
 }
 
-.cardBack, .cardFront > p {
+.cardBack > p, .cardFront > p {
   text-align: center;
+  font-size: 5vh;
 }
 
 .cardBack > p {
@@ -306,11 +307,6 @@ h1 {
   flex-direction: column;
 }
 
-
-.iconButtons > img {
-  height: 20px;
-  width: 20px;
-}
 
 /* Add Cards */
 

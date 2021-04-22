@@ -6,7 +6,13 @@ const { NODE_ENV } = require("./config");
 const studyCardsRouter = require("./routes/api/studycards");
 const spacedRetrievalsRouter = require("./routes/api/spacedretrievals");
 
-app.use(cors())
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, HEAD, PUT, POST, DELETE");
+  res.header("Access-Control-Allow-Headers", 
+  "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // set parse application urlencoded and json
 app.use(express.json());

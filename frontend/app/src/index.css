@@ -26,6 +26,7 @@
   padding-left: 6rem;
   padding-top: 5px;
 }
+
 .navBar {
   display: flex;
   align-items: center;
@@ -180,11 +181,11 @@ h1 {
   padding: 20px;
 }
 
+/* Example Cards */
+
 .subtitle {
   font-size: 45px;
 }
-
-/* Example cards */
 
 .example-section {
   padding-left: 3%;
@@ -248,4 +249,115 @@ h1 {
 
 .example-section > h2 {
   font-size: 45px;
+}
+
+/* DECK PAGE */
+
+.title { 
+  text-align: center;
+  color: var(--charcoal);
+  font-size: 45px;
+  padding-bottom: 30px;
+}
+
+/* Deck Cards */
+.cardFront, .cardBack {
+  border-radius: 15px;
+  width: 40%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  word-wrap: break-word;
+  height: 200px;
+}
+
+.cardFront {
+  background-color: var(--yellow);
+}
+
+.cardBack {
+  background-color: var(--blue);
+}
+
+.cardBack, .cardFront > p {
+  text-align: center;
+}
+
+.cardBack > p {
+  color: white;
+}
+
+.cardListItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2%;
+  padding-bottom: 2%
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cardListButtons {
+  display: flex;
+  flex-direction: columnolumn;
+}
+
+.cardListButtons > img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.iconButtons > img {
+  height: 20px;
+  width: 20px;
+}
+
+/* Add Cards */
+
+.add-container {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.cards-container {
+  padding-bottom: 40px;
+  height: 300px;
+  text-align: center;
+}
+
+.add {
+  height: 200px;
+  border: none;
+  outline: none;
+}
+
+input, label {
+  display: block;
+  margin: 20px;
+}
+
+.question-container {
+  float: left;
+  margin: 20px;
+}
+
+.answer-container {
+  float: left;
+  margin: 20px;
+}
+
+.add-container input[type=text] {
+  font-size: 20px;
+  color: var(--charcoal);
+  width: 300px;
+}
+
+.add-container ::placeholder {
+  color: white;
 }

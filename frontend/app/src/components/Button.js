@@ -16,11 +16,15 @@ const SIZES = [
     "btn--small"
 ]
 
+const POSITIONS = [
+    "btn--center"
+]
+
 const Button = ({ 
     buttonStyle,
     buttonSize,
+    buttonPosition,
     text,
-    image,
     event
     }) => {
 

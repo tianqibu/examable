@@ -23,7 +23,7 @@
 
 .logo {
   width: 300px;
-  padding-left: 6rem;
+  padding-left: 4rem;
   padding-top: 5px;
 }
 
@@ -36,7 +36,7 @@
 
 .buttonsContainer {
   display: flex;
-  align-items: space-evenly;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 2px;
 }
@@ -70,25 +70,27 @@ footer {
 
 .mainArticle {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: flex-start;
 }
 
 .articleText {
   font-size: 26px;
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0 4rem 0;
 }
 
 .articleImage {
-  flex: 0 2 auto;
-  padding: 1rem 5rem 1rem 2rem;
-  height: 500px;
+  flex: 0 2 500px;
+  margin: 1rem 3rem 1rem 3rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .articleBody {
-  padding: 1rem 2rem 1rem 5rem;
-  max-width: 500px;
+  flex: 1 0 auto;
+  padding: 1rem 3rem 1rem 3rem;
+  width: 300px;
 }
 
 h1 {
@@ -101,7 +103,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-height: 400px;
   margin: 4rem;
 }
 
@@ -152,9 +153,9 @@ h1 {
 }
 
 .launchLogo {
-  margin: -40px 0;
+  margin: -30px -20px -30px 0;
   height: auto;
-  max-width: 300px;
+  max-width: 100%;
 }
 
 .launchHeading {
@@ -171,14 +172,15 @@ h1 {
 }
 
 .placeholder {
-  width: 400px;
+  max-width: 100%;
+  height: auto;
 }
 
 .textContainer {
   overflow: auto;
   float: right;
   margin: 40px;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Example Cards */
@@ -196,9 +198,12 @@ h1 {
 .exampleCard {
   border-radius: 25px;
   display: flex;
+  flex: 0 1 auto;
   flex-direction: column;
-  width: 30%;
   height: 150px;
+  min-width: 30%;
+  width: 300px;
+  margin: 1rem 0;
 }
 
 .questionHalf {
@@ -243,12 +248,13 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 2%;
 }
 
 .example-section > h2 {
   font-size: 45px;
+  margin: 0 1rem;
 }
 
 /* DECK PAGE */

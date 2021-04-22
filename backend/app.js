@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-var cors = require('cors')
 const morgan = require("morgan");
 const { NODE_ENV } = require("./config");
 const studyCardsRouter = require("./routes/api/studycards");

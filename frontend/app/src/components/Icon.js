@@ -2,6 +2,8 @@ import PropTypes from 'prop-types'
 import './icon.css'
 import cross from './../images/Icon_Cross.svg'
 import tick from './../images/Icon_Tick.svg'
+import del from './../images/Icon_Delete.svg'
+import edit from './../images/Icon_Edit.svg'
 
 const Icon = ({ 
     icon,
@@ -10,7 +12,9 @@ const Icon = ({
     
     const ICONS = {
         "cross" : cross,
-        "tick" : tick
+        "tick" : tick,
+        "delete": del,
+        "edit": edit
     }
 
     return <button 

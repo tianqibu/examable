@@ -19,7 +19,8 @@ const AddCard = ({
                                 className="cardFront add" 
                                 type="text" required
                                 onChange={(e) => onQuestionChange(e.target.value)}
-                                name="question" 
+                                name="question"
+                                autocomplete="off" 
                                 placeholder={placeholder}
                                 defaultValue={question}/>
                         </label>
@@ -30,7 +31,8 @@ const AddCard = ({
                             className="cardBack add" 
                             type="text" required
                             onChange={(e) => onAnswerChange(e.target.value)}
-                            name="answer" 
+                            name="answer"
+                            autocomplete="off" 
                             placeholder={placeholder}
                             defaultValue={answer}/>
                         </label><br></br>

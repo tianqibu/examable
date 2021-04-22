@@ -156,7 +156,7 @@ function App() {
           showFlash
           ? (
               <Fade in={showFlash} timeout={{ enter: 300, exit: 1000 }}>
-                <Alert classname="alert" severity={flash.severity}>{flash.message}</Alert>
+                <Alert className="alert" severity={flash.severity}>{flash.message}</Alert>
               </Fade>
             )
           : null 
@@ -174,13 +174,17 @@ function App() {
           <Route path = '/deck' exact render={() =>
             <> 
               <Title title="My Examables" />
+              <div className="btn--center">
+                <Link to="/deck/add-card">
+                  <Button text="Add new examinable" />
+                </Link>
+              </div>
               <DeckCardList 
                 allCards={allCards} 
                 onDelete={deleteCard} 
                 onUpdate={cardToBeUpdated}
                 // fetchAllCards={fetchAllCards}
                 />
-              <Link to="/deck/add-card"><Button buttonPosition="btn--center" text="Add new examinable" /></Link>
             </>
 
             }/>
@@ -188,13 +192,15 @@ function App() {
             <> 
               <Title title="Add An Examable" />
               <AddCard
-                question='Q'
-                answer='A' 
                 onSubmit={addCard}
                 onQuestionChange={value => setNewQuestion(value)}
                 onAnswerChange={value => setNewAnswer(value)}
+                placeholder="Type here..."
                 />
-                <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
+                <div className="btn--center">
+                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
+                </div>
+                <div className="spacer"></div>
             </>
             }/>
           <Route path = '/deck/update-card' exact render={() =>
@@ -208,7 +214,10 @@ function App() {
                 onAnswerChange={value => setUpdateAnswer(value)}
                 onSubmit={updateCard}
               />
-              <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
+              <div className="btn--center">
+                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue"/></Link>
+              </div>
+              <div className="spacer"></div>
             </>
             }/>
           <Route path='/study-now' exact>

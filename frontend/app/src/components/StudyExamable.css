@@ -70,4 +70,6 @@
 .SE-No-Examable-Text {
     text-align: center;
     vertical-align: bottom;
+    font-weight: bold;
+    font-size: x-large;
 }

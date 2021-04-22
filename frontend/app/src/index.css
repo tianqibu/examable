@@ -47,6 +47,10 @@ html, body {
   position: relative;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .pageBody {
   padding-bottom: var(--footerHeight);
 }
@@ -56,7 +60,7 @@ footer {
   width: 100%;
   bottom: 0;
   background-color: var(--blue);
-  color: black;
+  color: var(--white);
   text-align: center;
   height: var(--footerHeight);
 }
@@ -103,7 +107,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 4rem;
+  margin: 2rem 4rem;
 }
 
 .GSL-Item {
@@ -132,17 +136,24 @@ h1 {
   margin: auto;
 }
 
+.GSL-Section {
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
 /* Launch */
 
 .launchContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 4rem;
+  margin: 2rem 4rem;
 }
 
 .child {
-  padding: 40px 5px;
+  /* margin: 20px;
+  padding-right: 100px; */
+  padding: 20px 5px;
   align-items: center;
   min-width: 300px;
   max-width: 400px;
@@ -237,7 +248,7 @@ h1 {
 }
 
 .answerHalf > h3 {
-  color: black;
+  color: var(--white);
   text-align: center;
   padding: 2%;
   font-weight: bold;
@@ -269,12 +280,13 @@ h1 {
 /* Deck Cards */
 .cardFront, .cardBack {
   border-radius: 15px;
-  width: 40%;
-  display:flex;
+  width: 30vw;
+  display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   justify-content: center;
   word-wrap: break-word;
-  height: 200px;
+  min-height: 20vw;
   box-shadow: 5px 5px 5px grey;
 }
 
@@ -288,7 +300,13 @@ h1 {
 
 .cardBack *, .cardFront * {
   text-align: center;
-  font-size: 5vh;
+  font-size: 2.5vw;
+}
+
+@media  only screen and (max-width: 800px) {
+  .cardBack *, .cardFront * {
+    font-size: 2vh;
+  }
 }
 
 .cardBack * {
@@ -319,11 +337,25 @@ h1 {
 .cardListButtons {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.iconBallast {
+  height: 16vh;
+  width: 8vh;
+  margin: auto 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .iconBallast {
+    height: 0;
+    width: 0;
+  }
 }
 
 .deckIcon {
   margin: 0;
+  background-color: transparent;
 }
 
 /* Add Cards */
@@ -331,10 +363,11 @@ h1 {
 .add-container {
   text-align: center;
   padding-bottom: 0px;
+  margin: auto;
 }
 
 .cards-container {
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   height: 300px;
   text-align: center;
   display: flex;
@@ -342,15 +375,10 @@ h1 {
 }
 
 .add {
-  height: 200px;
+  min-height: 200px;
   border: none;
   outline: none;
 }
-
-/* input, label {
-  display: block;
-  margin: 20px;
-} */
 
 label {
   font-size: 4vh;
@@ -358,20 +386,18 @@ label {
 }
 
 .question-container {
-  float: left;
   margin: 20px;
   width: 40vw;
 }
 
 .answer-container {
-  float: left;
   margin: 20px;
   width: 40vw;
 }
 
 .question-container input[type=text] {
   margin-top: 15px;
-  font-size: 5vh;
+  font-size: 4vh;
   color: var(--charcoal);
   width: 40vw;
   text-align: center;
@@ -379,7 +405,7 @@ label {
 
 .answer-container input[type=text] {
   margin-top: 15px;
-  font-size: 5vh;
+  font-size: 4vh;
   color: var(--white);
   width: 40vw;
   text-align: center;

@@ -9,4 +9,7 @@ export const getExamable = async () => {
     const nextCard = await fetchNextCard()
     return nextCard
 }
-
+// Scroll to top
+export const scrollToTop = () => {
+    window.scrollTo(0, 0)
+}

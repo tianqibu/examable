@@ -10,8 +10,9 @@
 .icon {
     cursor: pointer; 
     transition: transform 0.2s ease;
-    background-color: var(--white);
+    background-color: transparent;
     border: 0;
+    max-height: 8vh;
 }
 
 .icon:hover {
@@ -19,6 +20,16 @@
 }
 
 .icon_image {
-    width: 10vh;
-    height: 10vh;
+    width: 8vh;
+    height: 8vh;
+}
+
+@media only screen and (max-width: 800px) {
+    .icon_image {
+        width: 8vw;
+        height: 8vw;
+    }
+    .icon {
+        max-height: 8vw;
+    }
 }

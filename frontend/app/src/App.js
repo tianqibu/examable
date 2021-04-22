@@ -20,11 +20,14 @@ import { Link } from 'react-router-dom'
 function App() {
 
   const [allCards, setAllCards] = useState([])
+
   const [newQuestion, setNewQuestion] = useState('')
   const [newAnswer, setNewAnswer] = useState('')
+
   const [updateID, setUpdateID] = useState('')
   const [updateQuestion, setUpdateQuestion] = useState('')
   const [updateAnswer, setUpdateAnswer] = useState('')
+
   const [showFlash, setShowFlash] = useState(null);
   const [flash, setFlash] = useState({
         severity: '',
@@ -46,7 +49,7 @@ function App() {
     fetchAllCards()
   }, [])
 
-  // Flash Message 
+  // Flash message
   const displayFlashMessage = () => {
     setShowFlash(true)
     setTimeout(() => {
@@ -61,9 +64,10 @@ function App() {
     setUpdateAnswer(details.answer)
   }
 
-  // Deletes card from API
+  // Delete card
   const deleteCard = async (card) => {
-    console.log("Card deleted")
+    
+    // API
     const id = card.id
     const res = await fetch(`http://localhost:8000/api/studycards/${id}`, {
       method: 'DELETE',
@@ -72,8 +76,9 @@ function App() {
     displayFlashMessage();
 
     if (res.status === 204) {
-      // Deletes card from UI
+      // UI
       setAllCards(allCards.filter((c) => c._id !== card.id))
+      // Flash message
       setFlash({
         message: 'Success! The examable has been deleted.',
         severity:'success'
@@ -86,9 +91,10 @@ function App() {
     }
   }
 
-  // Add card to API
+  // Add card
   const addCard = async (e) => {
     e.preventDefault();
+    // Add card to DB 
     const res = await fetch('http://localhost:8000/api/studycards', {
       method: 'POST', 
       headers: { 'Content-Type': 'application/json' },
@@ -103,7 +109,9 @@ function App() {
     displayFlashMessage()
 
     if (res.status === 201) {
-      setAllCards([...allCards, data.newStudyCard]) // Adds card to UI 
+      // Adds card to UI
+      setAllCards([...allCards, data.newStudyCard]) 
+      // Flash message
       setFlash({
         message: 'Success! The examable has been added.',
         severity:'success'
@@ -116,11 +124,10 @@ function App() {
     }
   }
 
-  // Update card in API
+  // Update card 
   const updateCard = async (e) => {
     e.preventDefault();
-    console.log('Updating card')
-
+    // Update card in DB
     const res = await fetch(`http://localhost:8000/api/studycards/${updateID}`, {
       method: 'PUT', 
       headers: { 'Content-Type': 'application/json' },
@@ -135,7 +142,7 @@ function App() {
     displayFlashMessage()
 
     if (res.status === 200) {
-      // Updates card in UI
+      // Update card in UI
       setAllCards(allCards.map((card) => card._id === data._id ? data : card ))
       // Success message
       setFlash({
@@ -199,7 +206,13 @@ function App() {
                 placeholder="Type here..."
                 />
                 <div className="btn--center">
-                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue" buttonSize="btn--large"/></Link>
+                  <Link to="/deck">
+                    <Button 
+                      text="My examables" 
+                      buttonStyle="btn--blue" 
+                      buttonSize="btn--large"
+                    />
+                  </Link>
                 </div>
                 <div className="spacer"></div>
             </>
@@ -216,7 +229,13 @@ function App() {
                 onSubmit={updateCard}
               />
               <div className="btn--center">
-                  <Link to="/deck"><Button text="My examables" buttonStyle="btn--blue" buttonSize="btn--large"/></Link>
+                  <Link to="/deck">
+                    <Button 
+                      text="My examables" 
+                      buttonStyle="btn--blue" 
+                      buttonSize="btn--large"
+                    />
+                  </Link>
               </div>
               <div className="spacer"></div>
             </>
@@ -230,7 +249,6 @@ function App() {
           
           </div>
         <Footer />
-     
     </Router>
   );
 }

@@ -1,7 +1,7 @@
 import Button from './Button'
 import image from '../images/NoteImage_Square.svg'
 import { Link } from 'react-router-dom'
-
+import { scrollToTop } from './Utils'
 const Article = () => {
     return (
         <div className="mainArticle">
@@ -11,6 +11,7 @@ const Article = () => {
                 <Link to='/deck'><Button 
                     buttonStyle="btn--charcoal" 
                     text="Create a deck"
+                    event={scrollToTop}
                 /></Link>
             </div>    
             <img className='articleImage right' src={image} alt="A note with the question 'Want to learn faster?' written on it"></img>

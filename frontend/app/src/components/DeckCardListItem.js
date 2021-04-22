@@ -14,14 +14,16 @@ const DeckCardListItem = ({ id, question, answer, onDelete, onUpdate }) => {
                 <p>{ answer }</p>
             </div>
             <div className="cardListButtons">
-                <Link className="iconButtons" to='/deck/update-card'><Icon
-                                icon="edit"
-                                event={() => onUpdate({id, question, answer })}>
-                                </Icon></Link>
-                                <Icon
-                                icon="delete"
-                                event={()=>onDelete({id})}>
-                                </Icon>
+                <Link className="iconButtons" to='/deck/update-card'>
+                    <Icon
+                        icon="edit"
+                        event={() => onUpdate({id, question, answer })}>
+                    </Icon>
+                </Link>
+                    <Icon
+                        icon="delete"
+                        event={()=>onDelete({id})}>
+                    </Icon>
                 
                                 
             </div>

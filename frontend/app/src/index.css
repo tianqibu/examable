@@ -306,11 +306,6 @@ h1 {
   flex-direction: column;
 }
 
-.cardListButtons > img {
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-}
 
 .iconButtons > img {
   height: 20px;

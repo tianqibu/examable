@@ -72,6 +72,7 @@ const StudyExamable = () => {
     return (
         <>
         {!Examable ? 
+         
             <p className="SE-No-Examable-Text SE-Question-Container Shadow SE-Card-Large">You've finished studying all of your Examables for now! Check back later.</p>
             :
             <div className="SE-Container">

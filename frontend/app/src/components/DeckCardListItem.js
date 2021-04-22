@@ -1,5 +1,5 @@
-import Icon_Edit from '../images/Icon_Edit.svg'
-import Icon_Delete from '../images/Icon_Delete.svg'
+
+import Icon from './Icon'
 
 import { Link } from 'react-router-dom'
 
@@ -14,8 +14,18 @@ const DeckCardListItem = ({ id, question, answer, onDelete, onUpdate }) => {
                 <p>{ answer }</p>
             </div>
             <div className="cardListButtons">
-                <Link className="iconButtons" to='/deck/update-card'><img src={Icon_Edit} alt="Edit button" onClick={() => onUpdate({id, question, answer })}></img></Link>
-                <img  src={Icon_Delete} alt="Delete button" onClick={()=>onDelete({id})}></img>
+                <Link  to='/deck/update-card'>
+                    <Icon className="deckIcon"
+                        icon="edit"
+                        event={() => onUpdate({id, question, answer })}>
+                    </Icon>
+                </Link>
+                    <Icon className="deckIcon"
+                        icon="delete"
+                        event={()=>onDelete({id})}>
+                    </Icon>
+                
+                                
             </div>
         </div>
     )

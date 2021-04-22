@@ -285,8 +285,9 @@ h1 {
   background-color: var(--blue);
 }
 
-.cardBack, .cardFront > p {
+.cardBack > p, .cardFront > p {
   text-align: center;
+  font-size: 5vh;
 }
 
 .cardBack > p {
@@ -309,18 +310,12 @@ h1 {
 
 .cardListButtons {
   display: flex;
-  flex-direction: columnolumn;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.cardListButtons > img {
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-}
-
-.iconButtons > img {
-  height: 20px;
-  width: 20px;
+.deckIcon {
+  margin: 0;
 }
 
 /* Add Cards */

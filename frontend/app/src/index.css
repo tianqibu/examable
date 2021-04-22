@@ -215,6 +215,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   word-wrap: break-word;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .questionHalf > h3 {
@@ -234,6 +235,7 @@ h1 {
   justify-content: center;
   word-wrap: break-word;
   height: 50%;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .answerHalf > h3 {
@@ -254,6 +256,7 @@ h1 {
 .example-section > h2, .GSL-Section > h2 {
   font-size: 45px;
   margin: 0 1rem;
+  margin-left: 3rem;
 }
 
 /* DECK PAGE */
@@ -312,6 +315,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding-bottom: 60px;
 }
 
 .cardListButtons {

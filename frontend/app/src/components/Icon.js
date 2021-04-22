@@ -7,7 +7,8 @@ import edit from './../images/Icon_Edit.svg'
 
 const Icon = ({ 
     icon,
-    event
+    event,
+    margin
     }) => {
     
     const ICONS = {
@@ -20,13 +21,18 @@ const Icon = ({
     return <button 
             onClick={event}
             className={`icon`}>
-                <img className='icon_image' src={ICONS[icon]} alt={icon}></img>
+                <img className='icon_image' style={{ margin: margin}} src={ICONS[icon]} alt={icon}></img>
             </button>
 }
 
 // Prop validation
 Icon.propTypes = {
     text: PropTypes.string
+}
+
+// Default props
+Icon.defaultProps = {
+    margin: '0'
 }
 
 export default Icon 

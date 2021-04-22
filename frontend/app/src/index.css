@@ -305,8 +305,12 @@ h1 {
 .cardListButtons {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
+.deckIcon {
+  margin: 0;
+}
 
 /* Add Cards */
 

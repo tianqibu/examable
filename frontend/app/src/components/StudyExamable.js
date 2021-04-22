@@ -98,11 +98,13 @@ const StudyExamable = () => {
                             <div className="SE-Button-Container SE-Card-Small">
                                 <Icon
                                 icon="cross"
-                                event={WrongAnswer}>
+                                event={WrongAnswer}
+                                margin={"0 4rem"}>
                                 </Icon>
                                 <Icon
                                 icon="tick"
-                                event={CorrectAnswer}>
+                                event={CorrectAnswer}
+                                margin={"0 4rem"}>
                                 </Icon>
                             </div>
                         </>

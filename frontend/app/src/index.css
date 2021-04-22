@@ -303,7 +303,7 @@ h1 {
 
 .cardListButtons {
   display: flex;
-  flex-direction: columnolumn;
+  flex-direction: column;
 }
 
 .cardListButtons > img {

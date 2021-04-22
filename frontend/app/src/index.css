@@ -215,6 +215,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   word-wrap: break-word;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .questionHalf > h3 {
@@ -234,6 +235,7 @@ h1 {
   justify-content: center;
   word-wrap: break-word;
   height: 50%;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .answerHalf > h3 {

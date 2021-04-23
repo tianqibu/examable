@@ -1,21 +1,18 @@
 import Header from './components/Header'
-import GettingStartedList from './components/GettingStartedList'
 import Footer from './components/Footer'
-import Launch from './components/Launch'
-import Article from './components/Article'
-import Title from './components/Title'
-import ExampleCards from './components/ExampleCards'
-import DeckCardList from './components/DeckCardList'
-import Button from './components/Button'
-import AddCard from './components/AddCard'
-import StudyExamable from './components/StudyExamable'
+
+
+import Home from './pages/Home'
+import Deck from './pages/Deck'
+import DeckAddCard from './pages/DeckAddCard'
+import DeckUpdateCard from './pages/DeckUpdateCard'
+import StudyNow from './pages/StudyNow'
 
 import Alert from '@material-ui/lab/Alert';
 import Fade from '@material-ui/core/Fade';
 
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
-import { Link } from 'react-router-dom'
 
 function App() {
 
@@ -171,80 +168,34 @@ function App() {
         <Header />
         <div className="pageBody">
         <Route path='/' exact render={() => 
-          <>
-              <Article />
-              <GettingStartedList />
-              <Launch />
-              <ExampleCards />
-          </>
-          } />
+          <Home />
+        } />
           <Route path = '/deck' exact render={() =>
-            <> 
-              <Title title="My Examables" />
-              <div className="btn--center">
-                <Link to="/deck/add-card">
-                  <Button 
-                      buttonSize="btn--large" 
-                      text="Add new examable" />
-                </Link>
-              </div>
-              <DeckCardList 
-                allCards={allCards} 
-                onDelete={deleteCard} 
-                onUpdate={cardToBeUpdated}
-                />
-            </>
-
-            }/>
+            <Deck 
+              allCards={allCards} 
+              onDelete={deleteCard} 
+              onUpdate={cardToBeUpdated}
+            />
+          }/>
           <Route path = '/deck/add-card' exact render={() =>
-            <> 
-              <Title title="Add An Examable" />
-              <AddCard
-                onSubmit={addCard}
-                onQuestionChange={value => setNewQuestion(value)}
-                onAnswerChange={value => setNewAnswer(value)}
-                placeholder="Type here..."
-                />
-                <div className="btn--center">
-                  <Link to="/deck">
-                    <Button 
-                      text="My examables" 
-                      buttonStyle="btn--blue" 
-                      buttonSize="btn--large"
-                    />
-                  </Link>
-                </div>
-                <div className="spacer"></div>
-            </>
-            }/>
+            <DeckAddCard 
+              addCard={addCard}
+              onQuestionChange={value => setNewQuestion(value)}
+              onAnswerChange={value => setNewAnswer(value)}
+            />
+          }/>
           <Route path = '/deck/update-card' exact render={() =>
-            <> 
-              <Title title="Update An Examable" />
-              <AddCard 
-                ID={updateID}
-                question={updateQuestion}
-                answer={updateAnswer}
-                onQuestionChange={value => setUpdateQuestion(value)}
-                onAnswerChange={value => setUpdateAnswer(value)}
-                onSubmit={updateCard}
-              />
-              <div className="btn--center">
-                  <Link to="/deck">
-                    <Button 
-                      text="My examables" 
-                      buttonStyle="btn--blue" 
-                      buttonSize="btn--large"
-                    />
-                  </Link>
-              </div>
-              <div className="spacer"></div>
-            </>
-            }/>
+            <DeckUpdateCard 
+              ID={updateID} 
+              question={updateQuestion} 
+              answer={updateAnswer} 
+              onQuestionChange={value => setUpdateQuestion(value)}
+              onAnswerChange={value => setUpdateAnswer(value)}
+              updateCard={updateCard}
+            />
+          }/>
           <Route path='/study-now' exact>
-            <>
-              <Title title="Study Examables" />
-              <StudyExamable />
-            </>
+            <StudyNow />
           </Route>
           
           </div>
